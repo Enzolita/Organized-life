@@ -1,3 +1,8 @@
+import pickle
+import os
+from datetime import datetime
+
+
 """
 To Do List
 """
@@ -21,6 +26,21 @@ ascii_art = r'''
 colored_ascii_art = "\033[92m" + ascii_art
 print(colored_ascii_art)
 
+
+class Todo():
+    def __init__(self, title, created, completed=False):
+        self.title = title
+        self.created = created
+        self.completed = completed
+
+
+# Function to print all todos
+def print_all_todos():
+    print("+----+-------------------------------------+--------------+-------------+")
+    print("| ID |            Todo Title               |   Created    |  Completed  |")
+    print("+----+-------------------------------------+--------------+-------------+")
+
+
 def add_task(task):
     """
     Add a new task to the to-do list
@@ -28,23 +48,38 @@ def add_task(task):
     with open('todo.txt', 'a') as f:
         f.write(task + "\n")
 
-def delete_task(task):
+def delete_task():
     """
     Delete a task from the To-Do-List.
     """
-    if len(tasks) == 0:
-        print('no tasks to delete.')
-    else:
-            print('Tasks:')
-            for i, task in enumerate(tasks):
-                print(f'{i+1}', {tasks})
-            choice = int(input('Enter the task number to delete'))
+    # Read tasks from the file
+    try:
+        with open('todo.txt', 'r') as f:
+            tasks = f.read().splitlines()
+    except FileNotFoundError:
+        print("There are no tasks.")
+        return
 
-            if 0 < choice <= len(tasks):
-                del tasks[choice-1]
-                print('Task deletes successully.')
-            else:
-                print('Invalid task number.')
+    if len(tasks) == 0:
+        print('No tasks to delete.')
+        return
+
+    print('Tasks:')
+    for i, task in enumerate(tasks):
+        print(f'{i+1}. {task}')
+
+    choice = int(input('Enter the task number to delete: '))
+    
+    if 0 <= choice - 1 < len(tasks):  # Adjusted condition to account for zero indexing
+        del tasks[choice - 1]
+        print('Task deleted successfully.')
+
+        # Save the updated list back to the file
+        with open('todo.txt', 'w') as f:
+            for task in tasks:
+                f.write("%s\n" % task)
+    else:
+        print('Invalid task number.')
 
 
 def display_tasks():
@@ -74,7 +109,7 @@ if __name__ == "__main__":
             add_task(task)
         elif choice == "2":
             index = input("Enter the task number to delete: ")
-            delete_task(task)
+            delete_task()
         elif choice == "3":
             display_tasks()
         elif choice == "4":
@@ -82,3 +117,4 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid choice. Please try again.")
+
