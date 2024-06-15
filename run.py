@@ -1,7 +1,32 @@
 import pickle
 import os
+import gspread
+from google.oauth2.service_account import Credentials
 from datetime import datetime
 
+# Amended from: Code Institute project love_sandwiches
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+
+# Google Sheets setup
+# Authenticate and create the client
+CREDS = Credentials.from_service_account_file("creds.json")
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open("organized-life")
+
+try:
+    worksheet = SHEET.worksheet("todo")
+except gspread.WorksheetNotFound:
+    print(
+            f"{Fore.RED}{Style.BRIGHT}Error: Worksheet not found."
+            f"Please check the worksheet name and try again.{Style.RESET_ALL}"
+        )
+exit()
 
 """
 To Do List
@@ -27,18 +52,18 @@ colored_ascii_art = "\033[92m" + ascii_art
 print(colored_ascii_art)
 
 
-class Todo():
+class Task():
     def __init__(self, title, created, completed=False):
         self.title = title
         self.created = created
         self.completed = completed
 
 
-# Function to print all todos
-def print_all_todos():
-    print("+----+-------------------------------------+--------------+-------------+")
-    print("| ID |            Todo Title               |   Created    |  Completed  |")
-    print("+----+-------------------------------------+--------------+-------------+")
+# Function to print all tasks
+def print_Task():
+    print("+----+-------------------------------+--------------+-------------+")
+    print("| ID |          To-Do List           | Task Created |  Completed  |")
+    print("+----+------------------- -----------+--------------+-------------+")
 
 
 def add_task(task):
@@ -49,6 +74,7 @@ def add_task(task):
         f.write(task + "\n")
 
 def delete_task():
+    
     """
     Delete a task from the To-Do-List.
     """
@@ -69,8 +95,8 @@ def delete_task():
         print(f'{i+1}. {task}')
 
     choice = int(input('Enter the task number to delete: '))
-    
-    if 0 <= choice - 1 < len(tasks):  # Adjusted condition to account for zero indexing
+    # Adjusted condition to account for zero indexing
+    if 0 <= choice - 1 < len(tasks): 
         del tasks[choice - 1]
         print('Task deleted successfully.')
 
@@ -117,4 +143,3 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid choice. Please try again.")
-
