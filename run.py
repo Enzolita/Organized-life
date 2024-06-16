@@ -9,8 +9,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
-
+]
 
 # Google Sheets setup
 # Authenticate and create the client
@@ -23,17 +22,16 @@ try:
     worksheet = SHEET.worksheet("todo")
 except gspread.WorksheetNotFound:
     print(
-            f"{Fore.RED}{Style.BRIGHT}Error: Worksheet not found."
-            f"Please check the worksheet name and try again.{Style.RESET_ALL}"
-        )
-exit()
+        "Error: Worksheet not found. "
+        "Please check the worksheet name and try again."
+    )
+    exit()
 
 """
 To Do List
 """
 
 ascii_art = r'''
-
   /$$$$$$                                          /$$                    
  /$$__  $$                                        |__/                    
 | $$  \ $$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$  /$$ /$$$$$$$$  /$$$$$$ 
@@ -53,14 +51,12 @@ ascii_art = r'''
 | $$      | $$| $$    | $$_____/                                          
 | $$$$$$$$| $$| $$    |  $$$$$$$                                          
 |________/|__/|__/     \_______/                                          
-                                                                          
 '''
-
 colored_ascii_art = "\033[92m" + ascii_art
 print(colored_ascii_art)
 
 
-class Task():
+class Task:
     def __init__(self, title, created, completed=False):
         self.title = title
         self.created = created
@@ -69,9 +65,9 @@ class Task():
 
 # Function to print all tasks
 def print_Task():
-    print("+----+-------------------------------+--------------+-------------+")
-    print("| ID |          To-Do List           | Task Created |  Completed  |")
-    print("+----+------------------- -----------+--------------+-------------+")
+    print("+----+------------------------------+--------------+-------------+")
+    print("| ID |         To-Do List           | Task Created |  Completed  |")
+    print("+----+------------------------------+--------------+-------------+")
 
 
 def add_task(task):
@@ -81,8 +77,8 @@ def add_task(task):
     with open('todo.txt', 'a') as f:
         f.write(task + "\n")
 
+
 def delete_task():
-    
     """
     Delete a task from the To-Do-List.
     """
@@ -104,7 +100,7 @@ def delete_task():
 
     choice = int(input('Enter the task number to delete: '))
     # Adjusted condition to account for zero indexing
-    if 0 <= choice - 1 < len(tasks): 
+    if 0 <= choice - 1 < len(tasks):
         del tasks[choice - 1]
         print('Task deleted successfully.')
 
@@ -118,7 +114,7 @@ def delete_task():
 
 def display_tasks():
     """
-    Displays the tasks"
+    Displays the tasks
     """
     try:
         with open('todo.txt', 'r') as f:
@@ -137,16 +133,15 @@ if __name__ == "__main__":
         print("3. Display tasks")
         print("4. Exit")
         choice = input("Enter your choice: ")
-        
         if choice == "1":
             task = input("Enter the task: ")
             add_task(task)
         elif choice == "2":
-            index = input("Enter the task number to delete: ")
             delete_task()
         elif choice == "3":
             display_tasks()
         elif choice == "4":
+            index = input("Enter the task number to delete: ")
             print("Thank you for using the To-Do-List Application")
             break
         else:
