@@ -1,8 +1,8 @@
-import pickle
 import os
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
+from tabulate import tabulate
 
 # Amended from: Code Institute project love_sandwiches
 SCOPE = [
@@ -52,7 +52,7 @@ ascii_art = r'''
 | $$$$$$$$| $$| $$    |  $$$$$$$                                          
 |________/|__/|__/     \_______/                                          
 '''
-colored_ascii_art = "\033[92m" + ascii_art
+colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
 
@@ -61,13 +61,6 @@ class Task:
         self.title = title
         self.created = created
         self.completed = completed
-
-
-# Function to print all tasks
-def print_Task():
-    print("+----+------------------------------+--------------+-------------+")
-    print("| ID |         To-Do List           | Task Created |  Completed  |")
-    print("+----+------------------------------+--------------+-------------+")
 
 
 def add_task(task):
@@ -114,13 +107,27 @@ def delete_task():
 
 def display_tasks():
     """
-    Displays the tasks
+    Displays the tasks in a tabulated format
     """
     try:
         with open('todo.txt', 'r') as f:
             tasks = f.read().splitlines()
-            for i, task in enumerate(tasks, start=1):
-                print(f"{i}. {task}")
+            if not tasks:
+                print("There are no tasks.")
+                return
+
+            table = []
+            for line in tasks:
+                parts = line.strip().split('|')
+                id_ = len(table) + 1
+                title = parts[0]
+                created = datetime.strptime(parts[1], '%Y-%m-%d')
+                completed = bool(int(parts[2]))
+                table.append([id_, title, created, completed])
+
+            table = [[i + 1, task] for i, task in enumerate(tasks)]
+            headers = ["ID", "Task", "Task Created", "Completed"]
+            print(tabulate(table, headers, tablefmt="grid"))
     except FileNotFoundError:
         print("There are no tasks.")
 
@@ -141,8 +148,7 @@ if __name__ == "__main__":
         elif choice == "3":
             display_tasks()
         elif choice == "4":
-            index = input("Enter the task number to delete: ")
-            print("Thank you for using the To-Do-List Application")
+            print("Thank you for using the To-Do-List Application!")
             break
         else:
             print("Invalid choice. Please try again.")
