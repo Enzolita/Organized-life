@@ -54,3 +54,33 @@ def show_tasks():
     print("Current tasks:")
     for todoid, task in dictionary.items():
         print(f"ID: {todoid}, task: {task}")
+    
+while True:
+    print("\nWelcome to your To-Do-List:")
+    print("What do you want to do?")
+    print("1. Add task")
+    print("2. Show tasks")
+    print("3. Remove task")
+    print("4. Exit")
+    choice = input()
+    if choice == "1":
+        print("What would you like to add?")
+        task = input()
+        add_task(task)
+        show_tasks()
+
+    elif choice == "2":
+        show_tasks()
+
+    elif choice == "3":
+        show_tasks()
+        print("Input the ID of the task you want to delete")
+        task = int(input())
+        remove_task(task)
+
+    elif choice == "4":
+        print("Thank you for using the To-Do-List Application")
+        break
+        
+    else:
+        print("Invalid Input")
