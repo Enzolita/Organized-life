@@ -4,28 +4,6 @@ from google.oauth2.service_account import Credentials
 from datetime import datetime
 from tabulate import tabulate
 
-# Amended from: Code Institute project love_sandwiches
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-]
-
-# Google Sheets setup
-# Authenticate and create the client
-CREDS = Credentials.from_service_account_file("creds.json")
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("organized-life")
-
-try:
-    worksheet = SHEET.worksheet("todo")
-except gspread.WorksheetNotFound:
-    print(
-        "Error: Worksheet not found. "
-        "Please check the worksheet name and try again."
-    )
-    exit()
 
 """
 To Do List
@@ -56,99 +34,23 @@ colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
 
-class Task:
-    def __init__(self, title, created, completed=False):
-        self.title = title
-        self.created = created
-        self.completed = completed
-
+dictionary = {}
+todoid = 0
 
 def add_task(task):
-    """
-    Add a new task to the to-do list
-    """
-    with open('todo.txt', 'a') as f:
-        f.write(task + "\n")
+    global todoid
+    todoid += 1
+    dictionary[todoid] = task
+    print(f"task added {task}, with ID {todoid}")
 
-
-def delete_task():
-    """
-    Delete a task from the To-Do-List.
-    """
-    # Read tasks from the file
-    try:
-        with open('todo.txt', 'r') as f:
-            tasks = f.read().splitlines()
-    except FileNotFoundError:
-        print("There are no tasks.")
-        return
-
-    if len(tasks) == 0:
-        print('No tasks to delete.')
-        return
-
-    print('Tasks:')
-    for i, task in enumerate(tasks):
-        print(f'{i+1}. {task}')
-
-    choice = int(input('Enter the task number to delete: '))
-    # Adjusted condition to account for zero indexing
-    if 0 <= choice - 1 < len(tasks):
-        del tasks[choice - 1]
-        print('Task deleted successfully.')
-
-        # Save the updated list back to the file
-        with open('todo.txt', 'w') as f:
-            for task in tasks:
-                f.write("%s\n" % task)
+def remove_task(task_id):
+    if task_id in dictionary:
+        del dictionary[task_id]
+        print(f"Task deleted with ID: {task_id}")
     else:
-        print('Invalid task number.')
+        print("Task does not exist.")
 
-
-def display_tasks():
-    """
-    Displays the tasks in a tabulated format
-    """
-    try:
-        with open('todo.txt', 'r') as f:
-            tasks = f.read().splitlines()
-            if not tasks:
-                print("There are no tasks.")
-                return
-
-            table = []
-            for line in tasks:
-                parts = line.strip().split('|')
-                id_ = len(table) + 1
-                title = parts[0]
-                created = datetime.strptime(parts[1], '%Y-%m-%d')
-                completed = bool(int(parts[2]))
-                table.append([id_, title, created, completed])
-
-            table = [[i + 1, task] for i, task in enumerate(tasks)]
-            headers = ["ID", "Task", "Task Created", "Completed"]
-            print(tabulate(table, headers, tablefmt="grid"))
-    except FileNotFoundError:
-        print("There are no tasks.")
-
-
-if __name__ == "__main__":
-    while True:
-        print("\n Welcome to your To-Do-List:")
-        print("1. Add task")
-        print("2. Delete task")
-        print("3. Display tasks")
-        print("4. Exit")
-        choice = input("Enter your choice: ")
-        if choice == "1":
-            task = input("Enter the task: ")
-            add_task(task)
-        elif choice == "2":
-            delete_task()
-        elif choice == "3":
-            display_tasks()
-        elif choice == "4":
-            print("Thank you for using the To-Do-List Application!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+def show_tasks():
+    print("Current tasks:")
+    for todoid, task in dictionary.items():
+        print(f"ID: {todoid}, task: {task}")
