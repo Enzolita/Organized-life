@@ -5,6 +5,7 @@ Welcome,
 
 # Introduction
 
+Welcome to Organized Life, your go-to Python-based to-do list application designed to help you manage your tasks efficiently and keep your life organized. With Organized Life, you can seamlessly track the date when tasks are created, mark them as done, and stay on top of your responsibilities.
 
 
 
