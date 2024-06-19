@@ -33,7 +33,7 @@ ascii_art = r'''
 colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
-
+#Data that saves tasks
 dictionary = {}
 todoid = 0
 
@@ -52,17 +52,21 @@ def remove_task(task_id):
 
 def show_tasks():
     print("Current tasks:")
+    table = []
     for todoid, task in dictionary.items():
         print(f"ID: {todoid}, task: {task}")
+        print(tabulate(table, headers=["#", "Task", "Created", "Completed"],
+        tablefmt="grid"))
     
 while True:
     print("\nWelcome to your To-Do-List:")
     print("What do you want to do?")
     print("1. Add task")
     print("2. Show tasks")
-    print("3. Remove task")
+    print("3. Delete task")
     print("4. Exit")
     choice = input()
+    
     if choice == "1":
         print("What would you like to add?")
         task = input()
