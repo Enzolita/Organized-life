@@ -58,6 +58,37 @@ Visit the deployed application at [Heroku](https://)
 
 #### Developer's goal
 
+The goal of Organized Life is to provide users with a simple, intuitive, and effective tool for managing their daily tasks and responsibilities. As developers, our mission is to create a robust, user-friendly application that enhances productivity and simplifies task management.
+
+Key objectives of Organized Life include:
+
+- Simplicity and Ease of Use: We aim to make Organized Life accessible to users of all technical levels. The application should be straightforward to install, set up, and use, with a clean and intuitive interface that minimizes the learning curve.
+
+- Efficiency: Our goal is to help users manage their tasks efficiently. By allowing users to track the creation date of tasks and mark them as done, we ensure that users can stay organized and focused on their priorities.
+
+- Reliability: We strive to develop a reliable application that users can depend on for their day-to-day task management. This includes ensuring the software is free of bugs, regularly updated, and capable of handling users' needs without performance issues.
+
+- Customization: Recognizing that each user's needs are unique, we aim to provide customizable features that allow users to tailor the application to their specific requirements. This includes customizable task categories, priorities, and notifications.
+
+- Scalability: While Organized Life is designed as a personal task management tool, we aim to develop it with scalability in mind, allowing it to grow and evolve with additional features and integrations based on user feedback and emerging needs.
+
+By focusing on these goals, we hope to create a valuable tool that users can rely on to keep their lives organized and productive. Thank you for choosing Organized Life, and we look forward to helping you achieve your task management goals.
+
+#### User's goal
+
+The primary goal for users of Organized Life is to streamline their task management processes and boost productivity. With Organized Life, users can expect to:
+
+- Stay Organized: Users can easily keep track of all their tasks in one place, ensuring that nothing falls through the cracks.
+
+- Improve Time Management: By tracking when tasks are created and completed, users can better manage their time and prioritize tasks effectively.
+
+- Increase Productivity: With features like task marking and categorization, users can quickly identify and focus on the most important tasks, enhancing overall productivity.
+
+- Customize Their Experience: Users have the flexibility to customize their task lists according to their personal preferences and needs, making the application work best for them.
+
+- Maintain Consistency: By regularly using Organized Life, users can develop consistent task management habits that contribute to long-term success in both personal and professional areas.
+
+By aligning our development goals with users' needs, we aim to create a mutually beneficial tool that enhances task management efficiency and supports a more organized and productive lifestyle. Thank you for choosing Organized Life, and we look forward to helping you achieve your task management goals.
 
 ## Reminders
 
