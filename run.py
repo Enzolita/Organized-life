@@ -31,6 +31,7 @@ ascii_art = r'''
 colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
+data_str = input("Enter your data here:\n")
 
 
 class Task:
