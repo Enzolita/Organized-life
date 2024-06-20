@@ -88,13 +88,36 @@ The primary goal for users of Organized Life is to streamline their task managem
 
 - Maintain Consistency: By regularly using Organized Life, users can develop consistent task management habits that contribute to long-term success in both personal and professional areas.
 
-By aligning our development goals with users' needs, we aim to create a mutually beneficial tool that enhances task management efficiency and supports a more organized and productive lifestyle. Thank you for choosing Organized Life, and we look forward to helping you achieve your task management goals.
+*<span style="color: blue;">[Back to Content](#content)</span>*
+---
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+
+## Technologies Used
+
+### Language
+
+[Python](https://www.python.org) is used as the back-end programming language.
+
+### Tools
+
+* [Code Institute Python Linter](https://pep8ci.herokuapp.com/): A tool to check Python code against some of the style conventions in [PEP8](https://peps.python.org/pep-0008/).
+* [Lucidchart](https://lucid.app/): Useful for planning the application's architecture and flowcharts, especially helpful in the design phase to visualize the application flow.
+* [Git](https://git-scm.com) used for version control. (```git add```, ```git commit```, ```git push```)
+* [Visual Studio Code](https://code.visualstudio.com/): A versatile and powerful IDE that supports Python development well, offering debugging tools, extensions for Python, and integrated Git control. While Gitpod provides its own web-based VS Code editor, one might use the desktop version for local development or when offline.
+* [Gitpod](https://gitpod.io) Streamlines your development process by providing a pre-configured, cloud-based development environment that's instantly ready for coding.
+* [GitHub](https://github.com) Essential for version control, allowing you to track changes, collaborate with others (if applicable), and secure online code storage.
+* [Heroku](https://www.heroku.com): A platform for deploying and hosting web applications. 
+* [Markup Validation Service](https://validator.w3.org/) - Used to check code ensuring that my HTML is error-free and adheres to the latest web standards.
+* [PEP8](https://peps.python.org/pep-0008/): Style Guide for Python Code.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
+---
+
+
+
+
 
 ## Creating the Heroku app
 
