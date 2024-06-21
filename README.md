@@ -20,9 +20,7 @@ Visit the deployed application at [Heroku](https://)
   * [User's goal](#users-goal)
 * [User Experience](#user-experience)
   * [The Strategy](#the-strategy)
-  * [The Scope](#the-scope)
   * [The Structure](#the-structure)
-  * [The Skeleton](#the-skeleton)
   * [User stories](#user-stories)
 * [Design](#design)
   * [Color Usage in Application](#color-usage-in-application)
@@ -92,7 +90,6 @@ The primary goal for users of Organized Life is to streamline their task managem
 ---
 
 
-
 ## Technologies Used
 
 ### Language
@@ -115,27 +112,19 @@ The primary goal for users of Organized Life is to streamline their task managem
 
 ---
 
+## Validation
 
+### PEP8 validator 
+
+* [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code. The results show that there is trailing whitespace. The reason why I added trailing whitespaces from line 11 to line 29 was because it was neccessary to have it to accomplish my formatting of the ''Organize life'' ascci art.
+Other than that, no errors were found.
+
+![x](documentation/pip8.png)
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
+- - -
 
 
 
 ## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
