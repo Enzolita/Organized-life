@@ -109,22 +109,15 @@ The primary goal for users of Organized Life is to streamline their task managem
 * [PEP8](https://peps.python.org/pep-0008/): Style Guide for Python Code.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
-
 ---
 
-## Validation
+## Testing
 
-### PEP8 validator 
-
-* [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code. The results show that there is trailing whitespace. The reason why I added trailing whitespaces from line 11 to line 29 was because it was neccessary to have it to accomplish my formatting of the ''Organize life'' ascci art.
-Other than that, no errors were found.
-
-![x](documentation/pip8.png)
+### Results and known issues
+Please refer to the [TESTING.md](/TESTING.md) file for all testing and troubleshooting carried out.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
-
-- - -
-
+---
 
 
 ## Creating the Heroku app
@@ -166,7 +159,7 @@ For this project, no external media was used for the creation of this project.
 
 ### Acknowledgements 
 
-A big thanks to
+A big thank you to
 
 * My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
 * The whole team at [Code Institute Slack community](https://code-institute-room.slack.com) for their teaching and support.
