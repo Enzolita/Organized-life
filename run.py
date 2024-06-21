@@ -56,6 +56,9 @@ todoid = 0
 
 def add_task(task):
     global todoid
+    if not task.strip():
+        print("Task cannot be empty.")
+        return
     todoid += 1
     dictionary[todoid] = Task(task)
     print(f"Task added: {task}, with ID {todoid}")
