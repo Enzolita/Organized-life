@@ -128,3 +128,47 @@ Other than that, no errors were found.
 
 
 ## Creating the Heroku app
+
+The Application has been deployed from GitHub to Heroku by following the steps:
+
+1. Create or log in to your account at heroku.com
+2. Create a new app, add a unique app name ( for example corri-construction-p3) and then choose your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars add the private API key information using key 'CRED' and into the value area copy the API key information added to the .json file.  Also add a key 'PORT' and value '8000'.
+6. Add required buildpacks (further dependencies). For this project, set it up so Python will be on top and Node.js on bottom
+7. Go to "Deploy" and select "GitHub" in "Deployment method"
+8. To connect Heroku app to your Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below.
+9.  Choose the branch you want to build your app from
+10. If preferred, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
+11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
+
+---
+
+## Credits
+
+### Content
+
+This application was made possible by leveraging insights and code examples from a range of external resources. Below is a list of these key sources, which have significantly contributed to the functionality and design of the application.
+
+* [os](https://www.geeksforgeeks.org/os-module-python-examples/?ref=lbp) - The os module in Python provides a way to interface with the underlying operating system, allowing you to perform tasks like navigating the file system, managing files, and executing system commands, enhancing portability and interaction with the host environment.
+* [import datetime](https://www.geeksforgeeks.org/python-datetime-module/) - For handling date and time operations.
+* [tabulate](https://pypi.org/project/tabulate/) - Used for organizing tabular data.
+* [Try - Except](https://www.w3schools.com/python/python_try_except.asp) - For robust error management.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
+### Media
+
+For this project, no external media was used for the creation of this project.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
+### Acknowledgements 
+
+A big thanks to
+
+* My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
+* The whole team at [Code Institute Slack community](https://code-institute-room.slack.com) for their teaching and support.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
