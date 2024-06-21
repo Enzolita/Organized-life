@@ -7,6 +7,7 @@ from tabulate import tabulate
 To Do List
 """
 
+# ASCII art for the welcome banner
 ascii_art = r'''
   /$$$$$$                                          /$$                    
  /$$__  $$                                        |__/                    
@@ -28,10 +29,14 @@ ascii_art = r'''
 | $$$$$$$$| $$| $$    |  $$$$$$$                                          
 |________/|__/|__/     \_______/                                          
 '''
+# Add color to ASCII art for a better visual appearance
 colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
-data_str = input("Enter your data here:\n")
+# Prompt the user to enter their name
+data_str = input("Enter your name here:\n")
+
+# Define a class to represent a task
 
 
 class Task:
@@ -41,9 +46,12 @@ class Task:
         self.is_completed = False
 
 
-# Data that saves tasks
+# Dictionary to store tasks with their IDs
 dictionary = {}
+# Initialize task ID counter
 todoid = 0
+
+# Function to add a task
 
 
 def add_task(task):
@@ -52,6 +60,8 @@ def add_task(task):
     dictionary[todoid] = Task(task)
     print(f"Task added: {task}, with ID {todoid}")
 
+# Function to remove a task by its ID
+
 
 def remove_task(task_id):
     if task_id in dictionary:
@@ -59,6 +69,8 @@ def remove_task(task_id):
         print(f"Task successfully removed with ID: {task_id}")
     else:
         print("Task does not exist.")
+
+# Function to show all tasks in a tabulated format
 
 
 def show_tasks():
@@ -73,6 +85,8 @@ def show_tasks():
     else:
         print("There are no tasks to show.")
 
+# Function to mark a task as completed
+
 
 def mark_as_complete():
     show_tasks()
@@ -85,6 +99,8 @@ def mark_as_complete():
             print("Invalid task ID.")
     except ValueError:
         print("Invalid input.")
+
+# Main loop for the To-Do List application
 
 
 while True:
