@@ -67,9 +67,9 @@ def show_tasks():
         table = []
         for i, (todoid, todo) in enumerate(dictionary.items()):
             table.append([i + 1, todo.title, todo.created_at, '✅'
-            if todo.is_completed else '❌'])
+                         if todo.is_completed else '❌'])
         print(tabulate(table, headers=["ID", "Task", "Created", "Completed"],
-        tablefmt="grid"))
+                       tablefmt="grid"))
     else:
         print("There are no tasks to show.")
 
