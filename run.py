@@ -34,7 +34,7 @@ colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
 # Prompt the user to enter their name
-data_str = input("Enter your name here:\n")
+user_name = input("Enter your name here:\n")
 
 # Define a class to represent a task
 
@@ -75,7 +75,7 @@ def remove_task(task_id):
 
 def show_tasks():
     if dictionary:
-        print("Current tasks:")
+        print(f"Current tasks for {user_name}:")
         table = []
         for i, (todoid, todo) in enumerate(dictionary.items()):
             table.append([i + 1, todo.title, todo.created_at, '✅'
@@ -104,7 +104,7 @@ def mark_as_complete():
 
 
 while True:
-    print("\nWelcome to your To-Do-List:")
+    print(f"\nWelcome to your To-Do-List, {user_name}:")
     print("What do you want to do?")
     print("1. Add task")
     print("2. Show tasks")
@@ -132,7 +132,7 @@ while True:
         mark_as_complete()
 
     elif choice == "5":
-        print("Thank you for using the To-Do-List Application")
+        print(f"Thank you for using the To-Do-List Application {user_name}.")
         break
 
     else:
