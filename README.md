@@ -1,8 +1,3 @@
-Welcome,
-
-
-
-
 # Introduction
 
 Welcome to Organized Life, your go-to Python-based to-do list application designed to help you manage your tasks efficiently and keep your life organized. With Organized Life, you can seamlessly track the date when tasks are created, mark them as done, and stay on top of your responsibilities.
@@ -10,7 +5,7 @@ Welcome to Organized Life, your go-to Python-based to-do list application design
 
 
 
-Visit the deployed application at [Heroku](https://)
+Visit the deployed application at [Heroku](https://organized-life-a4f96feabeb5.herokuapp.com/)
 
 ## CONTENT
 
@@ -89,6 +84,32 @@ The primary goal for users of Organized Life is to streamline their task managem
 *<span style="color: blue;">[Back to Content](#content)</span>*
 ---
 
+## Features
+These features aim to transform the to-do list app into an all-encompassing solution for efficient task management, addressing the requirements of a diverse user base seeking an uncomplicated yet powerful method to arrange their everyday duties. The to-do list app is equipped with numerous intuitive features intended to boost task organization and productivity. Here’s a summary of its main features:
+### Landing page
+
+The landing page has a big visible ascii art that shows the python app's name.
+Where at the bottom of the banner, the first input for the user is to write their name.
+![x](documentation/images/landingpage.png)
+
+
+Thereafter the menu for the To-do list pops up with a welcome text and the user's name.
+A text with the question: "What do you want to do?" is shown. Below that text, the app allows the user to choose between 5 different options.
+![x](documentation/images/menu.png)
+
+###
+
+## Design
+
+### Am I Responsive
+
+A Command Line Interface app isn't inherently aimed at responsiveness in the context of varying screen sizes and interactive web design because it is primarily designed for interaction through a terminal or command prompt, not a graphical user interface or web browsers. The teaser image from "Am I Responsive" highlights this contrast by showing the app's interface in various device frames, illustrating that a CLI app's user experience and layout do not adapt like a web application designed with responsive web design principles.
+
+![x](documentation/images/amiresponsive.png)
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+---
+
 
 ## Technologies Used
 
@@ -120,21 +141,21 @@ Please refer to the [TESTING.md](/TESTING.md) file for all testing and troublesh
 ---
 
 
-## Creating the Heroku app
+## Deploying the App on Heroku
 
-The Application has been deployed from GitHub to Heroku by following the steps:
+To deploy the application from GitHub to Heroku, follow these steps:
 
-1. Create or log in to your account at heroku.com
-2. Create a new app, add a unique app name ( for example corri-construction-p3) and then choose your region
-3. Click on create app
-4. Go to "Settings"
-5. Under Config Vars add the private API key information using key 'CRED' and into the value area copy the API key information added to the .json file.  Also add a key 'PORT' and value '8000'.
-6. Add required buildpacks (further dependencies). For this project, set it up so Python will be on top and Node.js on bottom
-7. Go to "Deploy" and select "GitHub" in "Deployment method"
-8. To connect Heroku app to your Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below.
-9.  Choose the branch you want to build your app from
-10. If preferred, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
-11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
+1. Create an account or log in at heroku.com.
+2. Create a new app, providing a unique name (e.g., corri-construction-p3), and select your region.
+3. Click "Create app."
+4. Navigate to the "Settings" tab.
+5. Under "Config Vars," add your private API key with 'CRED' as the key and the corresponding value from your .json file. Also, add a key 'PORT' with the value '8000'.
+6. Add the necessary buildpacks, ensuring Python is listed first and Node.js second.
+7. Go to the "Deploy" tab and choose "GitHub" as the deployment method.
+8. Connect your Heroku app to your GitHub repository by entering the repository name, clicking 'Search,' and then 'Connect.'
+9. Select the branch you wish to deploy.
+10. Optionally, enable "Automatic Deploys" to keep your app in sync with your GitHub repository.
+11. Wait for the app to build. Once the deployment is successful, you will see an "App was successfully deployed" message and a 'View' button to access your deployed app.
 
 ---
 
