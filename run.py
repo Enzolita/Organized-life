@@ -34,7 +34,11 @@ colored_ascii_art = "\033[92m" + ascii_art + "\033[0m"
 print(colored_ascii_art)
 
 # Prompt the user to enter their name
-user_name = input("Enter your name here:\n")
+while True:
+    user_name = input("Enter your name here:\n").strip()
+    if user_name:
+        break
+    print("Name cannot be empty, please enter a valid name.")
 
 # Define a class to represent a task
 
