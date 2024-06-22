@@ -16,12 +16,12 @@ To ensure the portal is working correctly, the following tests were executed.
 | Name input | User inputs blank space or whitespace | Error message appears | Works as expected | 
 | Add task | Fill in the prompted fields and submit the task. | User gets asked what they would like to add | Works as expected | 
 | Show tasks | User selects the option to show all tasks. | All tasks from the dictionary are displayed in a tabulated table with details such as Task ID, description and dates. | Works as expected |
-| Show task | Fill in the prompted fields | Error message appears | Works as expected |
+| Show task | Fill in the prompted fields without any tasks saved | Error message appears | Works as expected |
 | Remove task | The specified tasks are removed from the dictionary | Delete specific task(s) by entering Task ID(s). | Works as expected |
-| Remove | Fill in the prompted fields | Error message appears | Works as expected |
+| Remove | Fill in the prompted fields without any tasks saved | Error message appears | Works as expected |
 | Mark task as complete | The user gets asked to enter the task's ID | Tells the user that the task with the desired ID is marked as completed | Works as expected |
 | Mark task as complete | The user selects to show tasks | Shows the user that task is completed with a green checkbox | Works as expected |
-| Mark task as complete | Fill in the prompted fields | Error message appears | Works as expected |
+| Mark task as complete | Fill in the prompted fields without any tasks saved | Error message appears | Works as expected |
 | Exit application | User selects the option to exit the application | Application stops | Works as expected |
 
 
