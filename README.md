@@ -15,8 +15,6 @@ Visit the deployed application at [Heroku](https://organized-life-a4f96feabeb5.h
   * [Objectives](#objectives)
   * [Developer's goal](#developers-goal)
   * [User's goal](#users-goal)
-* [User Experience](#user-experience)
-  * [User stories](#user-stories)
 * [Design](#design)
   * [Color Usage in Application](#color-usage-in-application)
   * [Am I Responsive](#am-i-responsive)
@@ -30,10 +28,7 @@ Visit the deployed application at [Heroku](https://organized-life-a4f96feabeb5.h
   * [Error Handling](#error-handling-strategy)
   * [Imports](#imports)
 * [Testing](#testing)
-* [Prerequisites and Deployment](#prerequisites-and-deployment)
-  * [Prerequisite](#prerequisite)
   * [Deploying on Heroku](#deploying-on-heroku)
-  * [Essential when creating the Heroku app](#Essentials)
   * [Local Deployment](#local-deployment)
   * [How to Clone](#how-to-clone)
   * [Forking](#forking)
@@ -252,6 +247,15 @@ Forking the GitHub Repository allows us to create a duplicate of the original re
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
+---
+
+### Local VS Deployment
+
+At the time of writing, there is no difference between the local version and the version deployed on Heroku.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+---
+
 
 
 ## Credits
