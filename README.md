@@ -1,5 +1,7 @@
 # Introduction
 
+![x](documentation/images/landingpage.png)
+
 Welcome to Organized Life, your go-to Python-based to-do list application designed to help you manage your tasks efficiently and keep your life organized. With Organized Life, you can seamlessly track the date when tasks are created, mark them as done, and stay on top of your responsibilities.
 
 
@@ -14,24 +16,19 @@ Visit the deployed application at [Heroku](https://organized-life-a4f96feabeb5.h
   * [Developer's goal](#developers-goal)
   * [User's goal](#users-goal)
 * [User Experience](#user-experience)
-  * [The Strategy](#the-strategy)
-  * [The Structure](#the-structure)
   * [User stories](#user-stories)
 * [Design](#design)
   * [Color Usage in Application](#color-usage-in-application)
-  * [Accessibility](#accessibility)
   * [Am I Responsive](#am-i-responsive)
-* [Existing features](#existing-features)
-* [Future features](#future-features)
+* [Features](#existing-features)
 * [Technologies used](#technologies-used)
   * [Language](#language)
   * [Tools](#tools)
 * [Data Model](#data-model)
   * [Flowchart](#flowchart)
   * [Functions & Error Handling](#functions--error-handling)
-  * [Error Handling Strategy](#error-handling-strategy)
+  * [Error Handling](#error-handling-strategy)
   * [Imports](#imports)
-  * [Programming paradigm](#programming-paradigm)
 * [Testing](#testing)
 * [Prerequisites and Deployment](#prerequisites-and-deployment)
   * [Prerequisite](#prerequisite)
@@ -145,6 +142,27 @@ If the user wants to remove a task, by entering number 3, the app will ask the u
 To exit the application, the user only have to press number 5. A text will appear saying: "Thank you for using the To-Do-List Application ''user-name''.
 
 ![x](documentation/images/exit-application.png)
+---
+
+
+## Error handling
+
+User enters blank or whitespace in user input.
+
+![x](documentation/images/invalid-name.png)
+
+
+User inputs to show task without any tasks saved.
+
+![x](documentation/images/show-task.png)
+
+User inputs to remove task without any tasks being saved.
+
+![x](documentation/images/no-tasks.png)
+
+User inputs to mark task as completed without any tasks being saved.
+
+![x](documentation/images/no-marked-tasks.png)
 ---
 
 
