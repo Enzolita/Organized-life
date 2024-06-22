@@ -45,8 +45,6 @@ Visit the deployed application at [Heroku](https://organized-life-a4f96feabeb5.h
    * [Media](#media)
    * [Acknowledgements](#acknowledgements)
 
-## Introduction
-
 ### Objectives
 
 #### Developer's goal
@@ -86,18 +84,71 @@ The primary goal for users of Organized Life is to streamline their task managem
 
 ## Features
 These features aim to transform the to-do list app into an all-encompassing solution for efficient task management, addressing the requirements of a diverse user base seeking an uncomplicated yet powerful method to arrange their everyday duties. The to-do list app is equipped with numerous intuitive features intended to boost task organization and productivity. Here’s a summary of its main features:
+
 ### Landing page
 
 The landing page has a big visible ascii art that shows the python app's name.
 Where at the bottom of the banner, the first input for the user is to write their name.
+
 ![x](documentation/images/landingpage.png)
+
+### Task Management
 
 
 Thereafter the menu for the To-do list pops up with a welcome text and the user's name.
-A text with the question: "What do you want to do?" is shown. Below that text, the app allows the user to choose between 5 different options.
+A text with the question: "What do you want to do?" is shown.
+Below that text, the app allows the user to choose between 5 different options.
+
 ![x](documentation/images/menu.png)
 
-###
+### Task addition
+
+When the user picks number 1, a question pops up asking: ''What would you like to add?"
+
+![x](documentation/images/add-task.png)
+
+### Task added
+
+After the user have typed in their ask, a ''Task added: 'desired task', with ID 1" and below that text, another text that says 'Current tasks for 'user-name' will appear in a tabulated table with the tasks ID, name, date creation and the status of the task if it's completed or not, if the task was just added, it automatically shows a red ''X''.
+
+![x](documentation/images/task-added.png)
+
+### Task ID
+
+Every task that's added gets its own unique ID name, depending on which order they were created, for example: 1,2,3 etc. for the user to easily being able to choose from.
+
+![x](documentation/images/task-id.png)
+
+### Mark task as completed
+
+When the user adds which task to mark as completed, a text that confirms that saying "Task with ID 'number' is now marked as completed.
+
+![x](documentation/images/mark-task.png)
+
+
+### Task marked as completed
+
+After the user have marked a task as completed and then choses number 2 to show tasks, the user will see that the desired task is now marked with a clear green checkbox.
+
+![x](documentation/images/task-completed.png)
+
+
+### Remove Task
+
+If the user wants to remove a task, by entering number 3, the app will ask the user to ''Input the ID of the task you want to remove". When the user have chosen their desired task for example '1', the app will confirm that with the text "Task successfully removed with ID: 1.
+
+![x](documentation/images/remove-task.png)
+
+
+### Exit Application
+
+To exit the application, the user only have to press number 5. A text will appear saying: "Thank you for using the To-Do-List Application ''user-name''.
+
+![x](documentation/images/exit-application.png)
+---
+
+
+
 
 ## Design
 
@@ -183,6 +234,6 @@ For this project, no external media was used for the creation of this project.
 A big thank you to
 
 * My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
-* The whole team at [Code Institute Slack community](https://code-institute-room.slack.com) for their teaching and support.
+* The whole team at [Code Institute Slack community](https://code-institute-room.slack.com)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
